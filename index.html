@@ -1,1 +1,655 @@
-Coming Soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 180 Course Portfolio</title>
+  
+  <!-- Inter font for clean, modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Deep Blue & Purple Color Palette */
+      --bg-dark: #070913;
+      --bg-surface: #0e1222;
+      --bg-surface-elevated: #151b32;
+      --card-border: rgba(147, 97, 255, 0.18);
+      --card-border-hover: rgba(168, 85, 247, 0.45);
+      
+      /* Vibrant Accents */
+      --accent-purple: #9333ea;
+      --accent-indigo: #6366f1;
+      --accent-cyan: #38bdf8;
+      --accent-gradient: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #38bdf8 100%);
+      --glow-purple: rgba(168, 85, 247, 0.25);
+      --glow-blue: rgba(56, 189, 248, 0.15);
+
+      /* Typography colors */
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      /* Measurements */
+      --max-width: 1040px;
+      --header-height: 72px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 24px);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99, 102, 241, 0.18), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 90% 60%, rgba(168, 85, 247, 0.12), transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-height);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background-color: rgba(7, 9, 19, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(99, 102, 241, 0.25));
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      color: #c084fc;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-link.citation-btn {
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      background: rgba(168, 85, 247, 0.1);
+    }
+
+    .nav-link.citation-btn:hover {
+      background: rgba(168, 85, 247, 0.22);
+      border-color: rgba(168, 85, 247, 0.6);
+      color: #f3e8ff;
+    }
+
+    .main-content {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+      flex: 1;
+    }
+
+    .hero-section {
+      padding: 3.5rem 2rem;
+      background: linear-gradient(145deg, rgba(14, 18, 34, 0.8), rgba(21, 27, 50, 0.6));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.5), 0 0 35px -5px var(--glow-purple);
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    /* Sleek Avatar Placeholder */
+    .avatar-wrapper {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      flex-shrink: 0;
+    }
+
+    .avatar-halo {
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      filter: blur(4px);
+      opacity: 0.6;
+    }
+
+    .avatar-circle {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #1e2646 0%, #0d1124 100%);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+      transition: var(--transition-smooth);
+    }
+
+    .avatar-circle:hover {
+      border-color: rgba(168, 85, 247, 0.6);
+    }
+
+    .avatar-icon {
+      width: 60px;
+      height: 60px;
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.8;
+      margin-bottom: 0.25rem;
+    }
+
+    .avatar-caption {
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* About Me text block */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      background: linear-gradient(180deg, #ffffff 20%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bio-box {
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid var(--accent-indigo);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .bio-highlight {
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .section-group-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-group-header h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-group-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    .outcomes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .outcome-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .outcome-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.6), 0 0 20px -3px var(--glow-purple);
+    }
+
+    .outcome-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #c084fc;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+
+    .outcome-card h3 {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      line-height: 1.4;
+      margin-bottom: 1.1rem;
+    }
+
+    .evidence-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(147, 97, 255, 0.08);
+      border: 1px dashed rgba(168, 85, 247, 0.4);
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .evidence-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #a855f7;
+      box-shadow: 0 0 8px #a855f7;
+      animation: pulse 2.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+
+    .citations-section {
+      background: linear-gradient(160deg, #0e1224 0%, #17122b 100%);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .citations-section h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .citations-section p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      max-width: 780px;
+    }
+
+    .citation-box {
+      background: rgba(7, 9, 19, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .citation-box ul {
+      margin-left: 1.25rem;
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background-color: #070913;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .site-footer span {
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+      
+      .hero-content {
+        align-items: center;
+      }
+      
+      .bio-box {
+        text-align: left;
+      }
+      
+      .nav-links {
+        gap: 0.2rem;
+        overflow-x: auto;
+        max-width: 60%;
+        padding-bottom: 4px;
+      }
+
+      .nav-link {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.55rem;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        height: auto;
+        padding: 0.75rem 0;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+      }
+
+      .brand-logo {
+        justify-content: center;
+      }
+
+      .nav-links {
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-section {
+        padding: 2rem 1.25rem;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .outcome-card {
+        padding: 1.25rem 1.25rem;
+      }
+      
+      .outcome-card h3 {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="CS 180 Home">
+        <span>CS 180</span>
+        <span class="brand-badge">Portfolio</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About Me</a></li>
+          <li><a href="#lo1" class="nav-link">LO 1</a></li>
+          <li><a href="#lo2" class="nav-link">LO 2</a></li>
+          <li><a href="#lo3" class="nav-link">LO 3</a></li>
+          <li><a href="#lo4" class="nav-link">LO 4</a></li>
+          <li><a href="#lo5" class="nav-link">LO 5</a></li>
+          <li><a href="#citations" class="nav-link citation-btn">AI Citations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+
+    <section id="about" class="hero-section" aria-labelledby="about-heading">
+      <div class="hero-layout">
+        
+        <!-- Profile Avatar Placeholder -->
+        <div class="avatar-wrapper" aria-hidden="true">
+          <div class="avatar-halo"></div>
+          <div class="avatar-circle">
+            <!-- Modern User Silhouette Vector Icon -->
+            <svg class="avatar-icon" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="avatar-caption">Photo</span>
+          </div>
+        </div>
+
+        <!-- About Me Bio Area -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">CS 180 Lab 1</div>
+          <h1 id="about-heading" class="hero-title">About Me</h1>
+          <div class="bio-box">
+            <p>
+              <span class="bio-highlight">[Your Name Here]</span> &mdash; Welcome to my course portfolio for CS 180. I am currently a Computer Science student passionate about software engineering, algorithmic design, and building modern, reliable computational systems.
+            </p>
+            <p style="margin-top: 0.6rem;">
+              <em>Bio placeholder: Replace this text with your personal background, academic focus, interests, and career goals for the semester.</em>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-group-header">
+      <h2>Course Learning Outcomes</h2>
+      <p>Artifacts, lab submissions, and reflective evidence mapped directly to each semester objective.</p>
+    </div>
+
+    <section class="outcomes-grid" aria-label="Course Learning Outcomes">
+
+      <!-- Outcome 1 -->
+      <article id="lo1" class="outcome-card">
+        <span class="outcome-tag">Learning Outcome 01</span>
+        <h3>Outcome 1: Understand and apply core software engineering and problem-solving principles.</h3>
+        <div>
+          <span class="evidence-badge">
+            <span class="evidence-indicator"></span>
+            Evidence coming soon
+          </span>
+        </div>
+      </article>
+
+      <!-- Outcome 2 -->
+      <article id="lo2" class="outcome-card">
+        <span class="outcome-tag">Learning Outcome 02</span>
+        <h3>Outcome 2: Design, write, test, and debug robust and efficient programs.</h3>
+        <div>
+          <span class="evidence-badge">
+            <span class="evidence-indicator"></span>
+            Evidence coming soon
+          </span>
+        </div>
+      </article>
+
+      <!-- Outcome 3 -->
+      <article id="lo3" class="outcome-card">
+        <span class="outcome-tag">Learning Outcome 03</span>
+        <h3>Outcome 3: Analyze algorithmic complexity and evaluate alternative technical solutions.</h3>
+        <div>
+          <span class="evidence-badge">
+            <span class="evidence-indicator"></span>
+            Evidence coming soon
+          </span>
+        </div>
+      </article>
+
+      <!-- Outcome 4 -->
+      <article id="lo4" class="outcome-card">
+        <span class="outcome-tag">Learning Outcome 04</span>
+        <h3>Outcome 4: Collaborate effectively using modern version control, code review, and development workflows.</h3>
+        <div>
+          <span class="evidence-badge">
+            <span class="evidence-indicator"></span>
+            Evidence coming soon
+          </span>
+        </div>
+      </article>
+
+      <!-- Outcome 5 -->
+      <article id="lo5" class="outcome-card">
+        <span class="outcome-tag">Learning Outcome 05</span>
+        <h3>Outcome 5: Explore and evaluate ethical, societal, and AI-driven impacts in modern computing.</h3>
+        <div>
+          <span class="evidence-badge">
+            <span class="evidence-indicator"></span>
+            Evidence coming soon
+          </span>
+        </div>
+      </article>
+
+    </section>
+
+    <section id="citations" class="citations-section" aria-labelledby="citations-heading">
+      <h2 id="citations-heading">
+        <svg style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2;" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        AI Citations & Academic Integrity
+      </h2>
+      <p>
+        In accordance with course guidelines, this section documents all AI-assisted tools and models consulted during the preparation and development of coursework and web artifacts.
+      </p>
+
+      <div class="citation-box">
+        <strong>Tool Consulted:</strong> Google Gemini 3 Flash / LLM Assistant<br>
+        <strong>Purpose of Usage:</strong> Generating starter semantic HTML5 skeleton and responsive vanilla CSS layout for Lab 1 portfolio structure.<br>
+        <strong>Modifications & Verification:</strong>
+        <ul>
+          <li>Reviewed code structure for semantic accessibility and adherence to pure HTML5/vanilla CSS constraints.</li>
+          <li>Customized layout styling, color schemes, and learning outcome declarations to match course milestones.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 CS 180 Portfolio &bull; <span>Designed for Lab 1</span></p>
+  </footer>
+
+</body>
+</html>
