@@ -615,6 +615,15 @@
         font-size: 1.05rem;
       }
     }
+
+    /* Portfolio evidence: readable prose and responsive homework cases. */
+    .outcome-content { color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; }
+    .outcome-content p + p { margin-top: 1.15rem; }
+    .ethics-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+    .ethics-case { min-width: 0; padding: 1.35rem; border: 1px solid var(--card-border); border-radius: var(--radius-md); background: rgba(10, 14, 26, 0.55); overflow-wrap: anywhere; }
+    .ethics-case p:first-child::first-line { color: var(--text-main); font-weight: 600; }
+    .ethics-reflection { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); }
+    @media (max-width: 760px) { .ethics-cases { grid-template-columns: 1fr; } .ethics-case { padding: 1.1rem; } }
   </style>
 </head>
 <body>
@@ -729,11 +738,11 @@
       <article id="lo1" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 01</span>
         <h3>Explain key moments in the historical development of AI and ML and relate them to modern AI systems.</h3>
-        <div>
-          <span class="evidence-badge">
-            <span class="evidence-indicator"></span>
-            Evidence coming soon
-          </span>
+        <div class="outcome-content">
+          <p>AI didn’t just show up when ChatGPT became popular. Back in 1950, Alan Turing proposed a test to see whether a machine could hold a conversation that seemed human. The 1956 Dartmouth workshop helped establish AI as a research field. Early systems mostly followed written rules to solve problems, and ELIZA, a chatbot created in 1966, used pattern matching to imitate a conversation. It could sound like it understood someone, even though it was following a much simpler process than today’s chatbots.</p>
+          <p>The progress wasn’t always smooth, though. AI went through periods called ‘AI winters,’ when the results didn’t live up to the hype and funding dropped. Expert systems like MYCIN and XCON showed that AI could be useful for specific tasks, but they struggled with situations outside their rules. Search methods also became an important part of AI. A*, developed through early robotics research, laid the groundwork for pathfinding used in navigation and robotics. That stood out to me because AI is much more than just generating answers in a chat window.</p>
+          <p>As computers became more powerful and more data became available, researchers could train more capable models. AlexNet’s success in 2012 was a major step forward for image recognition and showed what deep learning could do. Then transformers arrived in 2017 and helped pave the way for modern language models, including ChatGPT, which launched publicly in 2022. Instead of relying on ELIZA-style conversational rules, these models generate responses using patterns learned during training.</p>
+          <p>What stands out to me is that today’s AI didn’t appear overnight. It came from decades of breakthroughs, setbacks, and people building on earlier ideas. Modern chatbots are much more flexible than ELIZA, but sounding convincing still doesn’t mean their answers are correct. Looking at this history helps me understand both why AI has become so useful and why its limitations still matter.</p>
         </div>
       </article>
 
@@ -741,11 +750,25 @@
       <article id="lo2" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 02</span>
         <h3>Identify and discuss ethical issues associated with AI and ML and their societal implications.</h3>
-        <div>
-          <span class="evidence-badge">
-            <span class="evidence-indicator"></span>
-            Evidence coming soon
-          </span>
+        <div class="outcome-content">
+<div class="ethics-cases">
+          <section class="ethics-case" aria-label="Homework case 2">
+              <p>Case 2: Springfield School District used an AI system called ScoreWrite that is used to grade essays on their year end writing exam. The company says the system is more consistent than human graders, and the district emphasizes this benefit to parents and the school board. Teachers slowly rely on the system for its reports, and many eventually stopped giving feedback themselves. Nonetheless, a university researcher found that ScoreWrite gives lower scores to English language learners and students who use regional or community dialects, even when their ideas are very similarly strong. Its training data consisted almost of essays that gotten high scores under a narrow standard academic english. Another district office also started to use students’ scores to evaluate teachers, even though the systems were mainly developed to score individual essays.</p>
+              <p>The center ethical issue is bias and unfair assessment. ScoreWrite gives points to a particular language style instead of accurately checking the reasoning the exam is supposed to assess. Utilizing the same scoring process every time doesn’t make the process fair. A system can repeatedly have the same unfair judgement. If in the case, students demonstrate equally strong ideas and organization but receive different scores because of their language background, the scores don’t fairly represent the intended skills. Utilizing these results to check teachers creates an additional accountability problem because the district is using the tool for a purpose for which it was never meant for.</p>
+              <p>The consequences affect students, teachers, and families. English language learners and students who use community dialect could receive unclear feedback, lose confidence in their writing, or feel the pressure to lose their linguistic identity. Teachers’ reduced personal feedback make these problems unclear because students have less opportunities to receive an explanation that actually includes their reasoning. Teachers working with these students could also receive horrible evaluations because of the model’s bias rather than the quality of the teaching. In my point of view, the district should require human review of scores that have been disputed, test performance based on all backgrounds, and preserve meaningful teacher feedback. It should also stop using ScoreWrite for teachers to give evaluations unless the use is independently validated. Following these steps, it would preserve potential grading efficiences while making the district responsible for how its assessment affect people’s lives.</p>
+          </section>
+          <section class="ethics-case" aria-label="Homework case 3">
+              <p>Case 3: SureDrive Insurance uses an AI system called PriceRight to calculate specific auto insurance premiums. The system considers driving history, phone telematics, and etc. A consumer group found that customers in a certain zip code pay higher premiums despite having similar driving records, accident histories, and cars. Even the model doesn’t use race or income, specific zip codes, phone type, and driving schedules with work shifts. SureDrive’s data science team is informed about this issue, but customer service is instructed to describe the pricing as free of human bias. Some sales agents also change the inputs on files without documentation to lower prices for favored customers, and it slides because these agents are their top performers.</p>
+              <p>The main ethical issue is proxy discrimination. Excluding race and income from the inputs doesn’t prevent discrimination when other variables clearly reflect them more. The essential question is whether the system’s decisions are fair, rather than whether protected characteristics appear clearly in the data. Additionally, there is a transparency issue; SureDrive presents the system as unbiased while their own team is in the loop about proxies reproducing disparities. The vague explanation discourages customers from challenging the rates. Undocumented changes for personal contacts create another form of unfairness because customers receive advantages based on relationships.</p>
+              <p>These practices can make lower income customers and customers of minority groups face financial challenges. Higher premiums can make maintaining insurance more difficult, potentially affecting people the way they get to work or school. Alongside, customers without connections to sales agents could pay more than favored clients whose information has been displaced. Altogether, these practices ruin the trust in company’s pricing and complain process. In my point of view, SureDrive should check the model for disparities, investigate whether pricing variables have a defensible connection to driving risk, and check over variables that create unjustified differences. It should provide customers with proper explanations and access to meaningful review. Changes to customers inputs should also be noted and reviewed. Removing biased aspects alone would be enough if employees can still change prices or customers are misled about how decisions are made.</p>
+          </section>
+        </div>
+        <div class="ethics-reflection">
+          <p>AI ethics goes beyond whether a system gives the right answer. It also involves who benefits, who could get hurt, and whether people can question a decision that affects them. A system can work exactly the way it was designed and still create unfair outcomes. To me, that’s what makes ethics such an important part of building AI: getting something to work is only part of the job.</p>
+          <p>One thing that stood out in my lab was how confidently AI can explain something without having enough information. I compared ChatGPT and Gemini across four health scenarios. Both recognized the urgent breathing situation, but some responses made assumptions in the less urgent scenarios. It made me realize that a detailed answer can sound more reliable than it really is. Before trusting it, I need to think about how easily I can check it, how serious a mistake could be, and whether the consequences can be reversed. Four scenarios also aren’t enough to prove how a tool will handle every situation or a longer conversation.</p>
+          <p>Another concern is how easily useful technology can be turned toward harmful purposes. Voice cloning can help someone who has lost their voice communicate again, which is a meaningful use of AI. But that same ability can also let a scammer impersonate someone’s family member. In my lab, I proposed requiring a live consent recording with a randomly generated phrase to make unauthorized cloning harder. A familiar-sounding voice alone shouldn’t count as proof of someone’s identity.</p>
+          <p>Having a human involved doesn’t automatically fix these problems either. The person needs to actually question the system’s output and have the ability to correct it, instead of just approving whatever appears on the screen. My biggest takeaway is that responsible AI takes ongoing effort. That means checking for unfair outcomes, being honest about limitations, and giving people a real chance to challenge decisions that affect their lives.</p>
+        </div>
         </div>
       </article>
 
