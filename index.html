@@ -4,23 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nishchal Gurram — CS 180 Portfolio</title>
-  
-  <!-- Inter font for clean, modern typography -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Deep Blue & Radiant Purple Theme Tokens */
       --bg-dark: #0a0e1a;
       --bg-surface: #0d1527;
       --bg-surface-elevated: #131d36;
       --bg-chip: rgba(139, 92, 246, 0.12);
-      
+
       --card-border: rgba(139, 92, 246, 0.22);
       --card-border-hover: rgba(168, 85, 247, 0.55);
-      
+
       --accent-purple: #8b5cf6;
       --accent-vibrant-purple: #7928ca;
       --accent-blue: #3b82f6;
@@ -29,13 +27,11 @@
       --glow-purple: rgba(139, 92, 246, 0.3);
       --glow-blue: rgba(59, 130, 246, 0.22);
 
-      /* Typography */
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
       --text-highlight: #c084fc;
-      
-      /* Layout & Effects */
+
       --max-width: 1040px;
       --header-height: 72px;
       --radius-sm: 8px;
@@ -61,7 +57,7 @@
       background-color: var(--bg-dark);
       color: var(--text-main);
       line-height: 1.6;
-      background-image: 
+      background-image:
         radial-gradient(ellipse 75% 45% at 50% -5%, rgba(121, 40, 202, 0.24), transparent 70%),
         radial-gradient(ellipse 55% 40% at 85% 55%, rgba(59, 130, 246, 0.16), transparent 60%),
         radial-gradient(ellipse 50% 35% at 15% 85%, rgba(139, 92, 246, 0.14), transparent 60%);
@@ -180,7 +176,6 @@
       margin-bottom: 2.25rem;
     }
 
-    /* Sleek Avatar Placeholder */
     .avatar-wrapper {
       position: relative;
       width: 160px;
@@ -616,45 +611,174 @@
       }
     }
 
-    /* Portfolio evidence: readable prose and responsive homework cases. */
-    .outcome-content { color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; }
-    .outcome-content p + p { margin-top: 1.15rem; }
-    .ethics-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
-    .ethics-case { min-width: 0; padding: 1.35rem; border: 1px solid var(--card-border); border-radius: var(--radius-md); background: rgba(10, 14, 26, 0.55); overflow-wrap: anywhere; }
-    .ethics-reflection { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); }
-    @media (max-width: 760px) { .ethics-cases { grid-template-columns: 1fr; } .ethics-case { padding: 1.1rem; } }
-
-    /* Original applications: compact evidence, tables, and longer topic links. */
-    .worked-example { background: rgba(139, 92, 246, 0.08); border-left: 3px solid var(--accent-purple); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1.15rem 1.25rem; margin: 1.35rem 0; }
-    .worked-example .calculation { font-family: 'JetBrains Mono', monospace; font-size: 0.87rem; color: #e9d5ff; overflow-wrap: anywhere; }
-    .table-scroll { overflow-x: auto; margin: 1.25rem 0; border: 1px solid var(--card-border); border-radius: var(--radius-sm); }
-    .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; text-align: left; }
-    .evidence-table caption { padding: 0.8rem 1rem; color: #d8b4fe; font-weight: 600; text-align: left; }
-    .evidence-table th, .evidence-table td { padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); vertical-align: top; }
-    .evidence-table thead th { background: rgba(139, 92, 246, 0.1); color: var(--text-main); }
-    .evidence-table tbody th { color: #e2e8f0; }
-    .nav-container { gap: 1rem; }
-    .brand-logo { flex-shrink: 0; }
-    .nav-link { white-space: nowrap; padding-left: 0.5rem; padding-right: 0.5rem; }
-    .nav-links { gap: 0.1rem; }
-    .nav-link:focus-visible, .table-scroll:focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: 4px; }
-    @media (min-width: 641px) and (max-width: 980px) {
-      .site-header { height: auto; min-height: var(--header-height); padding: 0.75rem 0; }
-      .nav-container { flex-direction: column; gap: 0.65rem; }
-      .nav-links { max-width: 100%; flex-wrap: wrap; justify-content: center; }
+    .outcome-content {
+      color: #cbd5e1;
+      font-size: 0.96rem;
+      line-height: 1.8;
     }
+
+    .outcome-content p + p {
+      margin-top: 1.15rem;
+    }
+
+    .ethics-cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .ethics-case {
+      min-width: 0;
+      padding: 1.35rem;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      background: rgba(10, 14, 26, 0.55);
+      overflow-wrap: anywhere;
+    }
+
+    .ethics-reflection {
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    @media (max-width: 760px) {
+      .ethics-cases {
+        grid-template-columns: 1fr;
+      }
+
+      .ethics-case {
+        padding: 1.1rem;
+      }
+    }
+
+    .worked-example {
+      background: rgba(139, 92, 246, 0.08);
+      border-left: 3px solid var(--accent-purple);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.15rem 1.25rem;
+      margin: 1.35rem 0;
+    }
+
+    .worked-example .calculation {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.87rem;
+      color: #e9d5ff;
+      overflow-wrap: anywhere;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+    }
+
+    .evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+
+    .evidence-table caption {
+      padding: 0.8rem 1rem;
+      color: #d8b4fe;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .evidence-table th,
+    .evidence-table td {
+      padding: 0.8rem 1rem;
+      border-top: 1px solid var(--card-border);
+      vertical-align: top;
+    }
+
+    .evidence-table thead th {
+      background: rgba(139, 92, 246, 0.1);
+      color: var(--text-main);
+    }
+
+    .evidence-table tbody th {
+      color: #e2e8f0;
+    }
+
+    .nav-container {
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      flex-shrink: 0;
+    }
+
+    .nav-link {
+      white-space: nowrap;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .nav-links {
+      gap: 0.1rem;
+    }
+
+    .nav-link:focus-visible,
+    .table-scroll:focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 4px;
+    }
+
+    @media (min-width: 641px) and (max-width: 980px) {
+      .site-header {
+        height: auto;
+        min-height: var(--header-height);
+        padding: 0.75rem 0;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      .nav-links {
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
     @media (max-width: 640px) {
-      html { scroll-padding-top: 10rem; }
-      .nav-container nav { width: 100%; }
-      .nav-links { max-width: 100%; overflow: visible; }
-      .nav-link { display: inline-block; font-size: 0.76rem; }
-      .worked-example { padding: 1rem; }
-      .evidence-table { min-width: 28rem; }
+      html {
+        scroll-padding-top: 10rem;
+      }
+
+      .nav-container nav {
+        width: 100%;
+      }
+
+      .nav-links {
+        max-width: 100%;
+        overflow: visible;
+      }
+
+      .nav-link {
+        display: inline-block;
+        font-size: 0.76rem;
+      }
+
+      .worked-example {
+        padding: 1rem;
+      }
+
+      .evidence-table {
+        min-width: 28rem;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header class="site-header">
     <div class="nav-container">
       <a href="#" class="brand-logo" aria-label="CS 180 Home">
@@ -677,12 +801,8 @@
   </header>
 
   <main class="main-content">
-
-    <!-- About Me Section -->
     <section id="about" class="hero-section" aria-labelledby="about-heading">
       <div class="hero-top">
-        
-        <!-- Glowing Circular Profile Placeholder -->
         <div class="avatar-wrapper" aria-hidden="true">
           <div class="avatar-halo"></div>
           <div class="avatar-circle">
@@ -694,63 +814,58 @@
           </div>
         </div>
 
-        <!-- Name & Header Info -->
         <div class="hero-heading-group">
           <div class="hero-eyebrow">CS 180 &bull; Lab 1 Portfolio</div>
           <h1 id="about-heading" class="hero-title">Nishchal Gurram</h1>
           <div class="meta-badges">
             <span class="meta-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
               Major: Artificial Intelligence / Machine Learning
             </span>
+
             <span class="meta-badge meta-badge-blue">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
               Course: CS 180
             </span>
           </div>
         </div>
-
       </div>
 
-      <!-- Checklist Detail Cards -->
       <div class="about-cards-grid">
-        
-        <!-- Why taking this course -->
         <div class="about-card">
           <span class="about-card-label">Why I'm Taking This Course</span>
           <p>I'm taking CS 180 because I want to learn the foundations of artificial intelligence and machine learning, and my vision for the future is to build my own AI business surrounding one of my interests. Understanding the foundational principles at the beginning of college is critical to turning those dreams into reality.</p>
         </div>
 
-        <!-- What hoping to get out of it -->
         <div class="about-card">
           <span class="about-card-label">What I Hope To Get Out Of It</span>
           <p>I hope to build a proper foundation that will be a backbone for the rest of my AI coursework throughout the years and aid my future AI projects.</p>
         </div>
 
-        <!-- Real moment with AI -->
         <div class="about-card">
           <span class="about-card-label">A Real Moment Where AI/ML Appeared</span>
           <p>Over the summer, I had an AI internship where I spent significant time interacting with and testing conversational models to understand how they processed prompts. I could see how the model processed my prompt and how different prompting strategies influenced the output.</p>
         </div>
 
-        <!-- Honest concern / skepticism -->
         <div class="about-card">
           <span class="about-card-label">Honest Concern &amp; Skepticism</span>
           <p>My biggest concern is accuracy and hallucination, as many AI models tend to generate answers with confidence regardless of whether the information is factually true. This can affect people who completely rely on AI and impact other aspects indirectly. Today, many people usually trust AI blindly without double-checking, and that is a big issue in today's society.</p>
         </div>
 
-        <!-- Course Objective Curiosity -->
         <div class="about-card">
           <span class="about-card-label">Target Course Objective (LO 3)</span>
           <p>I am most curious about objective 3 (Describe how core AI techniques such as search and adversarial reasoning are used to model intelligent behavior) because understanding search algorithms and reasoning is essential when designing chatbots. This perfectly aligns with my goal of building AI tools in the future.</p>
         </div>
 
-        <!-- Outside of class detail -->
         <div class="about-card">
           <span class="about-card-label">Outside The Classroom</span>
           <p>Outside of school, I love going to the gym. Specifically, I do a lot of strength lifting and end my workouts with some running to have a balanced workout. This helps keep my mind calm and less stressed.</p>
         </div>
-
       </div>
     </section>
 
@@ -760,55 +875,113 @@
     </div>
 
     <section class="outcomes-container" aria-label="Course Learning Outcomes">
-
-      <!-- Outcome 1 -->
       <article id="lo1" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 01</span>
         <h3>Explain key moments in the historical development of AI and ML and relate them to modern AI systems.</h3>
+
         <div class="outcome-content">
-<p>Since I&#x27;m into the gym, I thought about how AI could turn a handwritten workout notebook into a digital log. For this example, I&#x27;m imagining an app that reads exercise names, weights, and reps from a picture. It sounds pretty simple at first, but looking at AI history helped me see why there are actually a few different problems to solve.</p>
-<p>A system based on symbolic AI from the 1950s or the later expert-system approach could follow rules for typed entries. If I type &#x27;row / 60 / 8,&#x27; a parser could split it into exercise, weight, and reps. But if I write &#x27;rows 60x8, last set 6,&#x27; that same rule might not work. I&#x27;d have to keep adding rules for different formats. That&#x27;s the kind of brittleness that limited early AI and contributed to the AI winters. Working on a few neat examples doesn&#x27;t mean a system can handle everyone&#x27;s messy notes.</p>
-<p>The shift toward learning from data in the 1990s gives me another option: train a model on labeled handwriting instead of trying to write every rule myself. AlexNet&#x27;s success in 2012 showed how useful deep neural networks could be for image recognition. I&#x27;m not saying AlexNet itself could read my notebook. A model for this app would still need training or adaptation for handwriting and workout entries.</p><div class="worked-example"><p>Say the notebook says &#x27;row / 60 / 8,&#x27; but the model reads the 8 as a 3. The total weight across those reps changes from 480 to 180. That&#x27;s a big difference from one wrong digit. I&#x27;d want the app to show the photo next to what it read so I could fix it before it calculates anything.</p></div><p>The transformer architecture introduced in 2017 could support a language model that turns the checked entries into a readable summary. But reading the handwriting, calculating totals, and writing that summary are different tasks. For this app, I&#x27;d use learned recognition for the image, regular code for the math, and rules to check the fields. Seeing how these ideas developed makes it easier to understand why a newer AI method doesn&#x27;t have to replace everything that came before it.</p>
+          <p>Since I'm into the gym, I thought about how AI could turn a handwritten workout notebook into a digital log. For this example, I'm imagining an app that reads exercise names, weights, and reps from a picture. It sounds pretty simple at first, but looking at AI history helped me see why there are actually a few different problems to solve.</p>
+
+          <p>A system based on symbolic AI from the 1950s or the later expert-system approach could follow rules for typed entries. If I type 'row / 60 / 8,' a parser could split it into exercise, weight, and reps. But if I write 'rows 60x8, last set 6,' that same rule might not work. I'd have to keep adding rules for different formats. That's the kind of brittleness that limited early AI and contributed to the AI winters. Working on a few neat examples doesn't mean a system can handle everyone's messy notes.</p>
+
+          <p>The shift toward learning from data in the 1990s gives me another option: train a model on labeled handwriting instead of trying to write every rule myself. AlexNet's success in 2012 showed how useful deep neural networks could be for image recognition. I'm not saying AlexNet itself could read my notebook. A model for this app would still need training or adaptation for handwriting and workout entries.</p>
+
+          <div class="worked-example">
+            <p>Say the notebook says 'row / 60 / 8,' but the model reads the 8 as a 3. The total weight across those reps changes from 480 to 180. That's a big difference from one wrong digit. I'd want the app to show the photo next to what it read so I could fix it before it calculates anything.</p>
+          </div>
+
+          <p>The transformer architecture introduced in 2017 could support a language model that turns the checked entries into a readable summary. But reading the handwriting, calculating totals, and writing that summary are different tasks. For this app, I'd use learned recognition for the image, regular code for the math, and rules to check the fields. Seeing how these ideas developed makes it easier to understand why a newer AI method doesn't have to replace everything that came before it.</p>
         </div>
       </article>
 
-      <!-- Outcome 2 -->
       <article id="lo2" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 02</span>
         <h3>Identify and discuss ethical issues associated with AI and ML and their societal implications.</h3>
+
         <div class="outcome-content">
-<div class="ethics-cases"><section class="ethics-case" aria-label="Gym reservation example"><p>For another example, imagine a gym using AI to decide who gets the busiest workout slots. It gives priority to people who have attended more often. That sounds fine until someone with a changing work schedule or family responsibilities keeps getting rejected. Past attendance could become a proxy variable for how flexible someone&#x27;s schedule is, instead of showing how much they actually want a slot.</p>
-<p>To put numbers on it, suppose 20 out of 25 people with flexible schedules get a reservation, while only 10 out of 25 people with fixed evening commitments do. These are made-up numbers, but the selection rates would be 80% and 40%, a gap of 40 percentage points. That would make me look into the system. It doesn&#x27;t prove discrimination by itself, though. I&#x27;d still need to compare things like which times people requested and how the booking rules worked.</p>
-<p>I&#x27;d also question why past attendance should count so much. Someone could get fewer reservations, attend less because of that, and then get pushed even further down the list. A lottery among eligible requests, with limits on repeat wins, might give more people a fair chance. Members should also be able to find out why they were rejected and get mistakes corrected.</p></section><section class="ethics-case" aria-label="Gym camera example"><p>A different gym example would be an optional camera that lets people review their exercise movements. The footage could help with that, but it could also show when someone visits, who they&#x27;re with, and people in the background who never agreed to be recorded. If the gym later uses those videos to track members or for advertising, that&#x27;s a pretty different use from what people signed up for.</p>
-<p>This connects to dual-use and privacy. The camera could work perfectly and still be used in a way that hurts people. Agreeing to record one exercise isn&#x27;t the same as agreeing to long-term tracking. The issue is what the gym does with the information and how much control members have over it.</p>
-<p>I&#x27;d make recording something people actively choose, keep it in a marked area, and capture as little extra footage as possible. I&#x27;d also set a deletion period and require separate permission before using the videos for something else. Keeping more recordings might help train a model, but that doesn&#x27;t mean the gym should get to keep everyone&#x27;s footage just because it&#x27;s useful.</p></section></div><div class="ethics-reflection"><p>Both examples show why checking whether an AI works isn&#x27;t enough. A reservation tool can follow the same rule for everyone and still give some people fewer chances. A camera can do its job and still collect information people didn&#x27;t want shared. The people running the gym have to take responsibility for those choices instead of blaming the tool.</p>
-<p>Calibrated trust matters here too. A prediction about how busy a class will be is pretty easy to check against attendance. A camera&#x27;s judgment about someone&#x27;s movement could be harder to verify and might change what they do next. I&#x27;d think about the stakes, verifiability, and reversibility before deciding how much to trust either one. Having a human involved only helps if that person can actually question the result and change it.</p></div>
+          <div class="ethics-cases">
+            <section class="ethics-case" aria-label="Gym reservation example">
+              <p>For another example, imagine a gym using AI to decide who gets the busiest workout slots. It gives priority to people who have attended more often. That sounds fine until someone with a changing work schedule or family responsibilities keeps getting rejected. Past attendance could become a proxy variable for how flexible someone's schedule is, instead of showing how much they actually want a slot.</p>
+
+              <p>To put numbers on it, suppose 20 out of 25 people with flexible schedules get a reservation, while only 10 out of 25 people with fixed evening commitments do. These are made-up numbers, but the selection rates would be 80% and 40%, a gap of 40 percentage points. That would make me look into the system. It doesn't prove discrimination by itself, though. I'd still need to compare things like which times people requested and how the booking rules worked.</p>
+
+              <p>I'd also question why past attendance should count so much. Someone could get fewer reservations, attend less because of that, and then get pushed even further down the list. A lottery among eligible requests, with limits on repeat wins, might give more people a fair chance. Members should also be able to find out why they were rejected and get mistakes corrected.</p>
+            </section>
+
+            <section class="ethics-case" aria-label="Gym camera example">
+              <p>A different gym example would be an optional camera that lets people review their exercise movements. The footage could help with that, but it could also show when someone visits, who they're with, and people in the background who never agreed to be recorded. If the gym later uses those videos to track members or for advertising, that's a pretty different use from what people signed up for.</p>
+
+              <p>This connects to dual-use and privacy. The camera could work perfectly and still be used in a way that hurts people. Agreeing to record one exercise isn't the same as agreeing to long-term tracking. The issue is what the gym does with the information and how much control members have over it.</p>
+
+              <p>I'd make recording something people actively choose, keep it in a marked area, and capture as little extra footage as possible. I'd also set a deletion period and require separate permission before using the videos for something else. Keeping more recordings might help train a model, but that doesn't mean the gym should get to keep everyone's footage just because it's useful.</p>
+            </section>
+          </div>
+
+          <div class="ethics-reflection">
+            <p>Both examples show why checking whether an AI works isn't enough. A reservation tool can follow the same rule for everyone and still give some people fewer chances. A camera can do its job and still collect information people didn't want shared. The people running the gym have to take responsibility for those choices instead of blaming the tool.</p>
+
+            <p>Calibrated trust matters here too. A prediction about how busy a class will be is pretty easy to check against attendance. A camera's judgment about someone's movement could be harder to verify and might change what they do next. I'd think about the stakes, verifiability, and reversibility before deciding how much to trust either one. Having a human involved only helps if that person can actually question the result and change it.</p>
+          </div>
         </div>
       </article>
 
-      <!-- Outcome 3 -->
       <article id="lo3" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 03</span>
         <h3>Describe how core AI techniques such as search and adversarial reasoning are used to model intelligent behavior.</h3>
+
         <div class="outcome-content">
-<p>I wanted to apply search to something besides finding a route, so I came up with a small event-planning problem. Say supplies come in sealed cartons of 2 or 5 packs, and I need exactly 17 packs. I can&#x27;t split cartons, and I want to use as few as possible. The state is just the total collected so far. I start at 0, each action adds 2 or 5 without going over 17, and each action costs one carton. The goal test checks whether I&#x27;ve reached 17. Stuff like the carton&#x27;s color doesn&#x27;t belong in the state because it doesn&#x27;t affect the problem.</p><div class="worked-example"><p>One shortest solution is 0 → 5 → 10 → 15 → 17. That&#x27;s three cartons of 5 and one of 2, so four actions. Three cartons could hold at most 15 packs, which means there&#x27;s no way to reach 17 in only three actions.</p></div><p>Breadth-first search, or BFS, would find a shortest solution here because every action has the same cost. Depth-first search, or DFS, might keep adding 2 and follow a longer branch before backing up. It could find a solution, but not necessarily the one with the fewest cartons. Different action sequences can also reach the same total, so I&#x27;d keep track of totals already reached at a lower or equal cost instead of checking them over and over.</p>
-<p>For A*, I&#x27;d use the heuristic h(n) = ceil((17 − n) / 5). Here n is the number of packs already collected, and ceil means round up. Dividing the missing packs by 5 gives a lower bound on how many cartons are still needed, since no carton adds more than 5. After adding 5, g = 1 and h = 3, so f = g + h = 4. After adding 2, g = 1 and h = 3 too, so both choices tie at 4. That helped me see that a heuristic doesn&#x27;t make every decision obvious. This one is consistent and doesn&#x27;t overestimate, so A* can still find a minimum-carton solution. I&#x27;d need to count the states explored before saying it&#x27;s faster than BFS here.</p>
-<p>Adversarial search changes things because someone else gets a move too. Imagine two clubs competing for 12 sign-ups. My club picks a booth format, then the other club sees it and responds. For this made-up example, each person joins exactly one club, so every extra sign-up for them is one fewer for us. The table uses numbers I chose to work through the decision, not actual predictions.</p><div class="table-scroll" role="region" aria-label="Hypothetical booth strategy payoffs" tabindex="0">
+          <p>I wanted to apply search to something besides finding a route, so I came up with a small event-planning problem. Say supplies come in sealed cartons of 2 or 5 packs, and I need exactly 17 packs. I can't split cartons, and I want to use as few as possible. The state is just the total collected so far. I start at 0, each action adds 2 or 5 without going over 17, and each action costs one carton. The goal test checks whether I've reached 17. Stuff like the carton's color doesn't belong in the state because it doesn't affect the problem.</p>
+
+          <div class="worked-example">
+            <p>One shortest solution is 0 → 5 → 10 → 15 → 17. That's three cartons of 5 and one of 2, so four actions. Three cartons could hold at most 15 packs, which means there's no way to reach 17 in only three actions.</p>
+          </div>
+
+          <p>Breadth-first search, or BFS, would find a shortest solution here because every action has the same cost. Depth-first search, or DFS, might keep adding 2 and follow a longer branch before backing up. It could find a solution, but not necessarily the one with the fewest cartons. Different action sequences can also reach the same total, so I'd keep track of totals already reached at a lower or equal cost instead of checking them over and over.</p>
+
+          <p>For A*, I'd use the heuristic h(n) = ceil((17 − n) / 5). Here n is the number of packs already collected, and ceil means round up. Dividing the missing packs by 5 gives a lower bound on how many cartons are still needed, since no carton adds more than 5. After adding 5, g = 1 and h = 3, so f = g + h = 4. After adding 2, g = 1 and h = 3 too, so both choices tie at 4. That helped me see that a heuristic doesn't make every decision obvious. This one is consistent and doesn't overestimate, so A* can still find a minimum-carton solution. I'd need to count the states explored before saying it's faster than BFS here.</p>
+
+          <p>Adversarial search changes things because someone else gets a move too. Imagine two clubs competing for 12 sign-ups. My club picks a booth format, then the other club sees it and responds. For this made-up example, each person joins exactly one club, so every extra sign-up for them is one fewer for us. The table uses numbers I chose to work through the decision, not actual predictions.</p>
+
+          <div class="table-scroll" role="region" aria-label="Hypothetical booth strategy payoffs" tabindex="0">
             <table class="evidence-table">
               <caption>Final sign-ups for my club after the rival's reply</caption>
-              <thead><tr><th scope="col">My choice</th><th scope="col">Rival matches it</th><th scope="col">Rival offers something different</th><th scope="col">Worst outcome</th></tr></thead>
-              <tbody><tr><th scope="row">Live demonstration</th><td>9</td><td>5</td><td>5</td></tr><tr><th scope="row">Giveaway</th><td>4</td><td>8</td><td>4</td></tr></tbody>
+              <thead>
+                <tr>
+                  <th scope="col">My choice</th>
+                  <th scope="col">Rival matches it</th>
+                  <th scope="col">Rival offers something different</th>
+                  <th scope="col">Worst outcome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Live demonstration</th>
+                  <td>9</td>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <th scope="row">Giveaway</th>
+                  <td>4</td>
+                  <td>8</td>
+                  <td>4</td>
+                </tr>
+              </tbody>
             </table>
-          </div><p>With minimax, I take the worst outcome for each choice and then pick the better one: max(min(9, 5), min(4, 8)) = 5. The live demonstration gives us 5 even if the rival chooses the response that&#x27;s worst for us. The giveaway only guarantees 4. So I&#x27;d choose the demonstration instead of picking whichever option has the single biggest number.</p>
-<p>Alpha-beta pruning can save some work here. If I check the demonstration first, alpha becomes 5. Then, on the giveaway branch, the rival&#x27;s first response gives us 4, so beta becomes 4. Since alpha ≥ beta, I can skip the other result, 8. The rival already has an option that leaves us with only 4, so that branch can&#x27;t beat the 5 we can guarantee elsewhere.</p>
-<p>The carton problem is about finding a plan. The booth problem is about finding a plan when someone can work against it. Real clubs might both benefit from the same event, though, so I&#x27;d only use this zero-sum model when their goals actually conflict. Otherwise, the assumptions behind minimax wouldn&#x27;t fit.</p>
+          </div>
+
+          <p>With minimax, I take the worst outcome for each choice and then pick the better one: max(min(9, 5), min(4, 8)) = 5. The live demonstration gives us 5 even if the rival chooses the response that's worst for us. The giveaway only guarantees 4. So I'd choose the demonstration instead of picking whichever option has the single biggest number.</p>
+
+          <p>Alpha-beta pruning can save some work here. If I check the demonstration first, alpha becomes 5. Then, on the giveaway branch, the rival's first response gives us 4, so beta becomes 4. Since alpha ≥ beta, I can skip the other result, 8. The rival already has an option that leaves us with only 4, so that branch can't beat the 5 we can guarantee elsewhere.</p>
+
+          <p>The carton problem is about finding a plan. The booth problem is about finding a plan when someone can work against it. Real clubs might both benefit from the same event, though, so I'd only use this zero-sum model when their goals actually conflict. Otherwise, the assumptions behind minimax wouldn't fit.</p>
         </div>
       </article>
 
-      <!-- Outcome 4 -->
       <article id="lo4" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 04</span>
         <h3>Explain fundamental machine learning approaches and distinguish between major learning paradigms.</h3>
+
         <div>
           <span class="evidence-badge">
             <span class="evidence-indicator" aria-hidden="true"></span>
@@ -817,10 +990,10 @@
         </div>
       </article>
 
-      <!-- Outcome 5 -->
       <article id="lo5" class="outcome-card">
         <span class="outcome-tag">Learning Outcome 05</span>
         <h3>Describe how generative AI and large language models operate at a conceptual level and evaluate their appropriate use.</h3>
+
         <div>
           <span class="evidence-badge">
             <span class="evidence-indicator" aria-hidden="true"></span>
@@ -828,7 +1001,6 @@
           </span>
         </div>
       </article>
-
     </section>
 
     <section id="citations" class="citations-section" aria-labelledby="citations-heading">
@@ -840,6 +1012,7 @@
         </svg>
         AI Citations &amp; Collaboration Log
       </h2>
+
       <p class="subtitle">
         Documentation of AI tool collaboration, human prompts, and development history in compliance with academic policies.
       </p>
@@ -890,12 +1063,10 @@ What Has Been Built:
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Nishchal Gurram &bull; <span>CS 180 Portfolio &bull; Lab 1</span></p>
   </footer>
-
 </body>
 </html>
